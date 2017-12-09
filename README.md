@@ -10,7 +10,7 @@ The app also uses jQuery and AJAX to help with making post requests.
 
 And for webscraping, the app uses the request and cheerio node packages. All webscrapping code can be found in the controllers.js file.
 
-##Technologies
+## Technologies
 
 * MongoDB
 * Node Packages
