@@ -46,9 +46,9 @@ router.get('/articles', function (req, res){
 
 // Web Scrape Route
 router.get('/scrape', function(req, res) {
-
+console.log("hey");
   // First, grab the body of the html with request
-  request('https://www.vahrehvah.com/', function(error, response, html) {
+  request('https://www.theverge.com/tech', function(error, response, html) {
 
     // Then, load html into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
@@ -57,16 +57,17 @@ router.get('/scrape', function(req, res) {
     var titlesArray = [];
 
     // Now, grab every everything with a class of "inner" with each "article" tag
-    $("border_x col-md-12").each(function(i, element) {
-
+    $("h2.c-entry-box--compact__title").each(function(i, element) {
         // Create an empty result object
         var result = {};
 
-        result.title = $(this).children("a").text();
-      result.link = $(this).children().children("a").attr("href");
+      //   result.title = $(this).children("a").text();
+      // result.link = $(this).children().children("a").attr("href");
 
-      
-
+      result.title = $(this).text();
+      console.log(result.title);
+    result.link = $(this) .children("a") .attr("href");
+    console.log(result.link);
         // Error handling to ensure there are no empty scrapes
         if(result.title !== "" ){
 
