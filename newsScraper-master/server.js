@@ -27,7 +27,7 @@ app.set('view engine', 'handlebars');
 // Database Configuration with Mongoose
 // ---------------------------------------------------------------------------------------------------------------
 // Connect to localhost if not a production environment
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines"
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/vahrehvah"
 
 // if(process.env.NODE_ENV == 'production'){
 //   mongoose.connect('mongodb://heroku_60zpcwg0:ubn0n27pi2856flqoedo9glvh8@ds119578.mlab.com:19578/heroku_60zpcwg0');
